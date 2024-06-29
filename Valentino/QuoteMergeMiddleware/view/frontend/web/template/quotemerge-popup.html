@@ -1,0 +1,17 @@
+<div class="block-content"
+    data-bind="afterRender: setModalElement, blockLoader: isLoading"
+    style="display: none">
+    <div class="quotemerge-items-wrapper">
+        <div id="quotemerge-list" class="quotemerge-items" data-bind="foreach: { data: items, as: 'item' }">
+            <each args="$parent.getRegion('itemRenderer')"
+                  render="{name: getTemplate(), data: item }"></each>
+        </div>
+    </div>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <a class="action action-merge primary" data-bind="click: merge">
+                <span data-bind="i18n: 'Merge Items Selected'"></span>
+            </a>
+        </div>
+    </div>
+</div>

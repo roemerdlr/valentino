@@ -1,0 +1,24 @@
+<?php
+/**
+ * 
+ */
+
+/** @var \Valentino\QuoteMergeMiddleware\Block\QuoteMergePopup $block */
+/** @var \Magento\Framework\View\Helper\SecureHtmlRenderer $secureRenderer */
+?>
+<div id="quotemergePopup" data-bind="scope:'quotemergePopup', style: {display: 'none'}">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+    <?php // phpcs:ignore Magento2.Legacy.PhtmlTemplate ?>
+    <script type="text/x-magento-init">
+        {
+            "#quotemergePopup": {
+                "Magento_Ui/js/core/app": <?= /* @noEscape */ $block->getJsLayout() ?>
+            },
+            "*": {
+                "Magento_Ui/js/block-loader": "<?= $block->escapeJs($block->escapeUrl($block->getViewFileUrl(
+                    'images/loader-1.gif'
+                ))) ?>"
+            }
+        }
+    </script>
+</div>

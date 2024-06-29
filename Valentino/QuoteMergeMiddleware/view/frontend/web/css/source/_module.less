@@ -1,0 +1,47 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .quotemerge-items-wrapper {
+        .quotemerge-items {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            .item {
+                display: flex;
+                padding: 10px;
+                margin: 5px 0;
+                gap: 20px;
+                align-items: center;
+                justify-content: flex-start;
+                background: #fff;
+                border-top: 1px solid #ddd;
+
+                > .product {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+
+                    .product-item-photo {
+                        display: block;
+                        text-align: center;
+                        max-width: 80px;
+                        max-height: 80px;
+
+                        .photo {
+                            max-width: 80px;
+                            max-height: 80px;
+                        }
+                    }
+
+                    .options {
+                        .option {
+                            display: inline-flex;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

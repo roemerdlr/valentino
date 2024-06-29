@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!--
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Valentino\QuoteMergeMiddleware\Api\QuoteMergeManagementInterface" type="Valentino\QuoteMergeMiddleware\Model\QuoteMergeManagement" />
+    <preference for="Magento\Checkout\Model\Session" type="Valentino\QuoteMergeMiddleware\Model\Session" />
+</config>

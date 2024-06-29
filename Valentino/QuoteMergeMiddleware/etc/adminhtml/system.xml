@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="valentino" translate="label" sortOrder="700">
+            <label>Valentino Rios Inc</label>
+        </tab>
+        <section id="quote_middleware" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Quote Merge Middleware</label>
+            <tab>valentino</tab>
+            <resource>Valentino_QuoteMergeMiddleware::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="enable" sortOrder="101" translate="label comment" type="select"  showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Quote Merge between Guest and Active Customer</label>
+                    <comment>Enables the functionality of merging or nor customer active quote with guest quote</comment>
+                    <tooltip>Usually these kinds of fields are used to enable or disable a given feature. Other fields might be dependent to this and will only appear if this field is set to yes.</tooltip>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>            
+        </section>       
+    </system>
+</config>

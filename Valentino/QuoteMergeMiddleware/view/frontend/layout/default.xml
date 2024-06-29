@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!--
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Valentino\QuoteMergeMiddleware\Block\QuoteMergePopup" name="quotemerge-popup" template="Valentino_QuoteMergeMiddleware::quotemerge-popup.phtml">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="quotemergePopup" xsi:type="array">
+                                <item name="component" xsi:type="string">Valentino_QuoteMergeMiddleware/js/view/quotemerge-popup</item>
+                                <item name="config" xsi:type="array">
+                                    <item name="template" xsi:type="string">Valentino_QuoteMergeMiddleware/quotemerge-popup</item>                                    
+                                </item>
+                                <item name="children" xsi:type="array">
+                                    <item name="item.renderer" xsi:type="array">
+                                        <item name="component" xsi:type="string">Valentino_QuoteMergeMiddleware/js/view/item-renderer</item>
+                                        <item name="config" xsi:type="array">
+                                            <item name="displayArea" xsi:type="string">itemRenderer</item>
+                                            <item name="template" xsi:type="string">Valentino_QuoteMergeMiddleware/item/default</item>
+                                        </item>
+                                        <item name="children" xsi:type="array">
+                                            <item name="item.image" xsi:type="array">
+                                                <item name="component" xsi:type="string">Valentino_QuoteMergeMiddleware/js/product/view/image</item>
+                                                <item name="config" xsi:type="array">
+                                                    <item name="template" xsi:type="string">Magento_Catalog/product/image</item>
+                                                    <item name="displayArea" xsi:type="string">itemImage</item>
+                                                </item>
+                                            </item>
+                                        </item>                                        
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

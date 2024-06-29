@@ -1,0 +1,51 @@
+<div class="item">
+    <div class="field choice">
+        <input class="item-selector" type="checkbox" data-bind="attr: {'name': 'quote-item-' + item_id, id: 'quote-item-' + item_id, value: item_id}" checked />
+        <label data-bind="attr: {'for': 'quote-item-' + item_id}"></label>
+    </div>
+    <div class="product">
+        <div class="product-item-details">
+            <span class="product-item-photo">
+                <!-- ko foreach: $parent.getRegion('itemImage') -->
+                    <!-- ko template: {name: getTemplate(), data: item.product_image} --><!-- /ko -->
+                <!-- /ko -->
+            </span>
+        
+            <div class="product-item-name">
+                <span data-bind="html: $parent.getProductNameUnsanitizedHtml(product_name)"></span>
+            </div>
+            <!-- ko if: options.length -->
+            <div class="product options">
+                <span class="title"><!-- ko i18n: 'See Details' --><!-- /ko --></span>
+                <div class="content">                                     
+                    <!-- ko foreach: { data: options, as: 'option' } -->
+                    <div class="option">
+                        <span class="label"><!-- ko text: option.label --><!-- /ko --></dt>
+                        <span class="values">
+                            <!-- ko if: Array.isArray(option.value) -->
+                                <span data-bind="html: $parents[1].getOptionValueUnsanitizedHtml(option.value.join('<br>'))"></span>
+                            <!-- /ko -->
+                            <!-- ko if: (!Array.isArray(option.value) && ['file', 'html'].includes(option.option_type)) -->
+                                <span data-bind="html: $parents[1].getOptionValueUnsanitizedHtml(option.value)"></span>
+                            <!-- /ko -->
+                            <!-- ko if: (!Array.isArray(option.value) && !['file', 'html'].includes(option.option_type)) -->
+                                <span data-bind="text: option.value"></span>
+                            <!-- /ko -->
+                        </span>
+                    </div>
+                    <!-- /ko -->                    
+                </div>
+            </div>
+            <!-- /ko -->
+
+            <div class="details-qty">
+                <span class="label"><!-- ko i18n: 'Qty:' --><!-- /ko --></span>
+                <span class="value" data-bind="text: item.qty"></span>
+            </div>
+            <div class="price-container">
+                <span class="label"><!-- ko i18n: 'Price:' --><!-- /ko --></span>
+                <span class="price-wrapper" data-bind="html: product_price"></span>
+            </div>
+        </div>
+    </div>
+</div>

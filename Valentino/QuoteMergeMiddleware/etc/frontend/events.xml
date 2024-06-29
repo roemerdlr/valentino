@@ -1,0 +1,5 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <!--event name="sales_quote_merge_before">
+        <observer name="avoid_sales_quote_merge" instance="Valentino\QuoteMergeMiddleware\Observer\SalesEventQuoteMerge"/>
+    </event-->
+</config>
